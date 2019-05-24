@@ -15,6 +15,12 @@ const mapDispatchToProps = (dispatch) => {
         type: 'ADD_BUCKET',
         country
       })
+    },
+    addToVisited: (country) => {
+      dispatch({
+        type: 'VISIT',
+        country
+      })
     }
   }
 }

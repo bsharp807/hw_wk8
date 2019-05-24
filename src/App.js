@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import NavBar from './components/NavBar';
 import Main from './Main';
 import BucketListContainer from './containers/BucketListContainer';
+import VisitedContainer from './containers/VisitedContainer';
 
 
 class App extends Component {
@@ -26,6 +27,7 @@ class App extends Component {
             <NavBar/>
             <Route exact path ="/" component = {Main} />
             <Route path = "/bucketlist" component = {BucketListContainer}/>
+            <Route path = "/visited" component = {VisitedContainer}/>
           </Fragment>
         </Router>
       </div>

@@ -1,9 +1,9 @@
 import React from 'react';
 import Flag from './Flag';
 
-const FlagList = (props) => {
+const VisitList = (props) => {
 
-  const mapFlags = props.bucket.map((element, index) => {
+  const mapFlags = props.visited.map((element, index) => {
     return(
       <Flag
         key={index}
@@ -21,4 +21,4 @@ const FlagList = (props) => {
   )
 }
 
-export default FlagList;
+export default VisitList;

@@ -10,6 +10,9 @@ const NavBar = () =>{
       <div className='link-router'>
         <Link to="/bucketlist">Bucket List</Link>
       </div>
+      <div className='link-router'>
+        <Link to="/visited">Visited</Link>
+      </div>
     </div>
   )
 }
