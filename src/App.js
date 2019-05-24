@@ -1,6 +1,7 @@
 import './App.css';
 import React, { Fragment } from "react";
 import {BrowserRouter as Router, Route} from 'react-router-dom';
+import { connect } from 'react-redux';
 import NavBar from './components/NavBar';
 import Main from './Main';
 import BucketListContainer from './containers/BucketListContainer';
@@ -21,4 +22,23 @@ function App() {
   );
 }
 
-export default App;
+const mapDispatchToProps = (dispatch) => {
+  getCountries() {
+    dispatch(() => {
+      fetch(`https://restcountries.eu/rest/v2/all`)
+      .then(res => res.json())
+      .then(countries => {
+        dispatch({
+          type: 'GET_COUNTRIES',
+          countries
+        })
+      })
+    })
+  }
+}
+
+componentDidMount() {
+  this.getCountries();
+}
+
+export default connect(null, mapDispatchToProps)(App);
