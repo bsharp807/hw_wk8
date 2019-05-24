@@ -7,5 +7,13 @@ const mapStateToProps = (state) => {
   };
 };
 
+const mapDispatchToProps = (dispatch) => {
+  updateSelected: (country) => {
+    dispatch({
+      type: 'UPDATE_SELECTED',
+      country
+    })
+  }
+}
 
 export default connect(mapStateToProps)(DropdownBox);

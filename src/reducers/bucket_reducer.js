@@ -1,7 +1,8 @@
-const bucketReducer = (state, action) => {
+const bucketReducer = (state = [], action) => {
   switch (action.type) {
     case 'ADD_BUCKET':
-      return state;
+      const newState = [...state, action.country]
+      return newState;
     default:
       return state;
   }
