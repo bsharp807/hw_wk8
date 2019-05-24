@@ -1,4 +1,4 @@
-const countryReducer = (state, action) => {
+const countryReducer = (state = {countries: [], selected: {}}, action) => {
   switch (action.type) {
     case 'GET_COUNTRIES':
       return state;
