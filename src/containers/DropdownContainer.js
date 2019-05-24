@@ -3,17 +3,19 @@ import DropdownBox from '../components/DropdownBox';
 
 const mapStateToProps = (state) => {
   return {
-    countries: state.countries
+    countries: state.initial.countries
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
-  updateSelected: (country) => {
-    dispatch({
-      type: 'UPDATE_SELECTED',
-      country
-    })
+  return{
+    updateSelected: (country) => {
+      dispatch({
+        type: 'UPDATE_SELECTED',
+        country
+      })
+    }
   }
 }
 
-export default connect(mapStateToProps)(DropdownBox);
+export default connect(mapStateToProps, mapDispatchToProps)(DropdownBox);

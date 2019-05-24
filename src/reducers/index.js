@@ -4,6 +4,6 @@ import countryReducer from './country_reducer.js';
 import bucketReducer from './bucket_reducer.js';
 
 export default combineReducers({
-  countries: countryReducer,
+  initial: countryReducer,
   bucket: bucketReducer
 });

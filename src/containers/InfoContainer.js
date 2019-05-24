@@ -1,20 +1,22 @@
 import { connect } from 'react-redux';
-import DropdownBox from '../components/DropdownBox';
+import InfoCard from '../components/InfoCard';
 
 const mapStateToProps = (state) => {
   return {
-    countries: state.countries,
-    selected: state.selected
+    countries: state.initial.countries,
+    selected: state.initial.selected
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
-  addToBucket: (country) => {
-    dispatch({
-      type: 'ADD_BUCKET',
-      country
-    })
+  return {
+    addToBucket: (country) => {
+      dispatch({
+        type: 'ADD_BUCKET',
+        country
+      })
+    }
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(DropdownBox);
+export default connect(mapStateToProps, mapDispatchToProps)(InfoCard);

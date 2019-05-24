@@ -4,6 +4,7 @@ import DropdownOptions from './DropdownOptions';
 const DropdownBox = (props) => {
 
   const mapCountries = () => {
+    console.log(props.countries);
     return props.countries.map((element, index) => {
       return(
         <DropdownOptions
@@ -14,8 +15,12 @@ const DropdownBox = (props) => {
     })
   }
 
+  const handleChange = (event) => {
+    props.updateSelected(event.target.value)
+  }
+
   return(
-    <select>
+    <select onChange={handleChange}>
       {mapCountries()}
     </select>
   )
